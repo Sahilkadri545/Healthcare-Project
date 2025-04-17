@@ -7,7 +7,7 @@ pipeline {
     stage('Git checkout') {
       steps {
            echo 'This is for cloning the gitrepo'
-           git branch: 'master', url: 'https://github.com/Balunideepak/healthcare-project.git'
+           git branch: 'master', url: 'https://github.com/Sahilkadri545/Healthcare-Project.git'
             }
           }
      stage('Maven Package') {
@@ -25,7 +25,7 @@ pipeline {
      stage('Docker Image Creation') {
       steps {
            echo 'This is for Docker image build'
-           sh 'docker build -t balunideepak/healthcare:latest .'
+           sh 'docker build -t sahil8337/healthcare:latest .'
             }
           }
      stage('Login to Dockerhub') {
@@ -39,7 +39,7 @@ pipeline {
                }
      stage('Push the Docker image') {
       steps {
-        sh 'docker push balunideepak/healthcare:latest'
+        sh 'docker push sahil8337/healthcare:latest'
                                 }
             }
       stage('Ansible Playbook') {
